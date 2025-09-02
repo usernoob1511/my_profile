@@ -10,7 +10,12 @@
     <canvas id="canvas"></canvas>
     <div class="profile-wrapper">
         <nav class="navbar">
-            <ul>
+            <button class="navbar-toggle" aria-label="Menu" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="navbar-menu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -21,7 +26,7 @@
             </ul>
         </nav>
         <div class="container">
-            <aside class="sidebar">
+      <aside class="sidebar">
                 <div class="avatar-container">
                     <img src="avatar.jpg" alt="Avatar" class="avatar">
                 </div>
@@ -35,6 +40,14 @@
                     <p><strong>Address:</strong> 54 Nguyen Luong Bang, Danang, Vietnam</p>
                     <p><strong>GitHub:</strong> <a href="https://github.com/usernoob1511" target="_blank">github.com/minh</a></p>
                     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/minh-doan-70318b361/" target="_blank">linkedin.com/in/minh</a></p>
+                </div>
+                <div class="vn-sidebar-block">
+                  <div class="flag-vn">
+                    <svg class="star-vn" viewBox="0 0 100 100">
+                      <polygon points="50,10 61,38 90,38 66,58 76,86 50,68 24,86 34,58 10,38 39,38" fill="#fbc02d" stroke="gold" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <div class="vn-text">CHÚC MỪNG QUỐC KHÁNH 2/9</div>
                 </div>
             </aside>
             <main class="main-content">
@@ -132,26 +145,6 @@
                         </div>
                     </div>
                 </section>
-                <!-- <section id="blog" class="section blog">
-                    <h2>Blog / Portfolio</h2>
-                    <div class="blog-list">
-                        <div class="blog-card">
-                            <h3>How I Built My First REST API</h3>
-                            <p>Sharing my experience building a RESTful API with Node.js and Express, including best practices and common pitfalls.</p>
-                            <a href="#" class="btn">Xem chi tiết</a>
-                        </div>
-                        <div class="blog-card">
-                            <h3>Java Swing Clock Panel Project</h3>
-                            <p>Walkthrough of my Java Swing clock panel app, with tips for custom graphics and database integration.</p>
-                            <a href="#" class="btn">Xem chi tiết</a>
-                        </div>
-                        <div class="blog-card">
-                            <h3>Solving Coding Challenges</h3>
-                            <p>My approach to tackling algorithm problems and how it helps me grow as a developer.</p>
-                            <a href="#" class="btn">Xem chi tiết</a>
-                        </div>
-                    </div>
-                </section> -->
                 <section id="hobbies" class="section hobbies">
                     <h2>Hobbies &amp; Interests</h2>
                     <div class="hobbies-list">
@@ -165,13 +158,27 @@
             </main>
         </div>
     </div>
-    <div class="flag-vn">
-      <svg class="star-vn" viewBox="0 0 100 100">
-        <polygon points="50,10 61,38 90,38 66,58 76,86 50,68 24,86 34,58 10,38 39,38" fill="#fbc02d" stroke="gold" stroke-width="2"/>
-      </svg>
-    </div>
-    <div class="vn-text">CHÚC MỪNG QUỐC KHÁNH 2/9</div>
+    <!-- <button class="vn-toggle" aria-label="Bật/tắt Quốc Khánh" onclick="toggleVN()">Hiện/Ẩn Quốc Khánh</button>
+    <div id="vn-container" style="position: relative; display: block;">
+      <div style="position: relative;">
+        <div class="flag-vn">
+          <svg class="star-vn" viewBox="0 0 100 100">
+            <polygon points="50,10 61,38 90,38 66,58 76,86 50,68 24,86 34,58 10,38 39,38" fill="#fbc02d" stroke="gold" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="vn-text">CHÚC MỪNG QUỐC KHÁNH 2/9</div>
+        <button class="vn-toggle-x" aria-label="Ẩn Quốc Khánh" onclick="toggleVN()">&#10006;</button>
+      </div>
+    </div> -->
     <script>
+      function toggleMenu() {
+        var menu = document.getElementById('navbar-menu');
+        menu.classList.toggle('show');
+      }
+      function toggleVN() {
+        var vn = document.getElementById('vn-container');
+        vn.style.display = (vn.style.display === 'none' || vn.style.display === '') ? 'block' : 'none';
+      }
       // Hiệu ứng Quốc khánh 2/9: pháo hoa, cờ, chữ chúc mừng
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
