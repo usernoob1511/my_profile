@@ -5,26 +5,7 @@
     align-items: center;
     gap: 12px;
 }
-/* Nút X bật/tắt Quốc Khánh */
-.vn-toggle-x {
-    position: relative;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(211, 31, 181, 0.85);
-    color: #8d1a6b;
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    font-size: 1.4rem;
-    cursor: pointer;
-    z-index: 101;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
+
 @media (max-width: 700px) {
     .vn-toggle-x {
         width: 28px;
@@ -273,8 +254,8 @@ body {
 .languages ul, .soft-skills ul {
     padding-left: 18px;
 }
-.flag-vn {
-    position: fixed;
+/* .flag-vn {
+    position: relative;
     left: 32px;
     top: 50%;
     transform: translateY(-60%);
@@ -301,7 +282,7 @@ body {
     z-index: 21;
 }
 .vn-text {
-    position: fixed;
+    position: relative;
     left: 32px;
     top: calc(50% + 140px);
     transform: translateY(-60%);
@@ -315,6 +296,32 @@ body {
     letter-spacing: 2px;
     background: none;
     z-index: 21;
+} */
+
+.flag-vn {
+    width: 260px;
+    height: 160px;
+    background: #d32f2f;
+    border-radius: 20px;
+    box-shadow: 0 4px 32px rgba(211,47,47,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-vn {
+    width: 100px;
+    height: 100px;
+}
+
+.vn-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fbc02d;
+    text-shadow: 0 2px 8px #d32f2f, 0 0 2px #fff;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin-top: 8px; /* sát hơn với lá cờ */
 }
 .navbar-toggle {
     display: none;
